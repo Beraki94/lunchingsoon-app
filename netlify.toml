@@ -1,6 +1,7 @@
 [build]
+  base = "lunchingsoon-app"
   command = "npm run build"
-  publish = ".next"
+  publish = "lunchingsoon-app/.next"
 
 [[plugins]]
   package = "@netlify/next"
