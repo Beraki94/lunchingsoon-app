@@ -1,0 +1,229 @@
+/* === ANIMATIONS === */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 1s ease-out;
+}
+
+/* === CUSTOM ALERT === */
+.custom-alert {
+  padding: var(--spacing-2);
+  border-radius: var(--spacing-1);
+  text-align: center;
+  font-weight: bold;
+  animation: slideDown 0.4s ease forwards;
+  margin-bottom: var(--spacing-2);
+}
+
+.custom-alert.success {
+  background-color: #d1fae5;
+  color: #065f46;
+  border: 1px solid #10b981;
+}
+
+.custom-alert.error {
+  background-color: #fee2e2;
+  color: #991b1b;
+  border: 1px solid #ef4444;
+}
+
+/* === HEADER === */
+.header {
+  text-align: center;
+  padding: var(--spacing-4) var(--spacing-2);
+  background-color: var(--neutral-white);
+  animation: fadeInUp 1s ease-in;
+}
+
+.header__title {
+  font-size: var(--font-size-2xl);
+  color: var(--primary-color);
+  margin-bottom: var(--spacing-1);
+}
+
+/* === HERO SECTION === */
+.hero {
+  background-image: url('/joeandjoemandilasgate.jpg');
+  background-size: cover;
+  background-position: center;
+  padding: 6rem 1rem;
+  color: var(--neutral-white);
+  text-align: center;
+  position: relative;
+  border-radius: var(--spacing-4);
+  animation: fadeInUp 1s ease-out;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(57, 58, 53, 0.70);
+  z-index: 1;
+  border-radius: var(--spacing-4);
+}
+
+.hero > * {
+  position: relative;
+  z-index: 2;
+}
+
+.hero__content {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.hero__heading {
+  font-size: var(--font-size-xxl);
+  color: rgb(252, 251, 251);
+}
+
+.hero__subheading {
+  font-size: var(--font-size-lg);
+  color: #ccc;
+  margin-top: var(--spacing-2);
+}
+
+/* === NOTIFY FORM === */
+.notify-form {
+  max-width: 500px;
+  margin: var(--spacing-4) auto;
+  padding: var(--spacing-4) var(--spacing-2);
+  background-color: var(--neutral-light);
+  border-radius: var(--spacing-1);
+  box-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.04),
+    0 8px 24px rgba(0, 0, 0, 0.08);
+  transition: var(--transition);
+}
+
+.form-group {
+  margin-bottom: var(--spacing-3);
+}
+
+.notify-form input,
+.notify-form select {
+  width: 100%;
+  padding: var(--spacing-2);
+  font-size: var(--font-size-md);
+  border: 1px solid var(--neutral-medium);
+  border-radius: var(--spacing-1);
+  background-color: var(--neutral-white);
+  transition: border 0.2s ease;
+  appearance: none;
+}
+
+.notify-form input:focus,
+.notify-form select:focus {
+  border-color: var(--primary-color);
+  outline: 1px solid var(--primary-color-light);
+  outline-offset: 2px;
+}
+
+.notify-form button {
+  width: 100%;
+  padding: var(--spacing-2);
+  font-size: var(--font-size-md);
+  margin-top: var(--spacing-2);
+  cursor: pointer;
+  border-radius: var(--spacing-1);
+  transition: var(--transition);
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-color-light);
+}
+
+.btn--secondary {
+  background-color: #075E54;
+  color: white;
+  border: none;
+}
+
+.btn--secondary:hover {
+  background-color: #1da851;
+}
+
+/* === FOOTER === */
+.footer {
+  text-align: center;
+  padding: var(--spacing-3) var(--spacing-2);
+  background-color: var(--neutral-white);
+  color: var(--neutral-medium);
+  font-size: var(--font-size-md);
+  margin-top: var(--spacing-4);
+  animation: fadeInUp 1s ease-in;
+}
+
+/* === RESPONSIVE === */
+@media screen and (max-width: 768px) {
+  .header__title {
+    font-size: var(--font-size-xl);
+  }
+
+  .hero {
+    padding: 4rem 1rem;
+    border-radius: var(--spacing-3);
+  }
+
+  .hero::before {
+    border-radius: var(--spacing-3);
+  }
+
+  .hero__heading {
+    font-size: var(--font-size-2xl);
+  }
+
+  .hero__subheading {
+    font-size: var(--font-size-md);
+  }
+
+  .notify-form {
+    padding: var(--spacing-3) var(--spacing-2);
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .notify-form button {
+    font-size: var(--font-size-sm);
+  }
+
+  .hero {
+    padding: 3rem 1rem;
+    border-radius: var(--spacing-2);
+  }
+
+  .hero::before {
+    border-radius: var(--spacing-2);
+  }
+
+  .hero__subheading {
+    font-size: var(--font-size-sm);
+  }
+}
