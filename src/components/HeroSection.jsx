@@ -10,7 +10,7 @@ export default function HeroSection() {
         src="/joemandilasgate.jpg"
         alt="Joe Mandilas Gate Background"
         fill
-        style={{ objectFit: "cover", zIndex: 0, borderRadius: "2rem" }}
+        style={{ objectFit: "cover", zIndex: 0 }}
         className="hero__image"
         priority
       />
