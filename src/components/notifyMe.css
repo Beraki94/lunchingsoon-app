@@ -56,7 +56,7 @@
 }
 
 .header__title {
-  font-size: var(--font-size-2xl);
+  font-size: 2.5rem;
   color: var(--primary-color);
   margin-bottom: var(--spacing-1);
 }
@@ -184,7 +184,7 @@
 /* === RESPONSIVE === */
 @media screen and (max-width: 768px) {
   .header__title {
-    font-size: var(--font-size-xl);
+    font-size: 2rem;
   }
 
   .hero {
@@ -197,7 +197,7 @@
   }
 
   .hero__heading {
-    font-size: var(--font-size-2xl);
+    font-size: 2.5rem;
   }
 
   .hero__subheading {
@@ -229,6 +229,8 @@
 }
 
 
+/*Loadering*/
+
 .loader-overlay {
   position: fixed;
   inset: 0;
@@ -253,7 +255,7 @@
 }
 
 .spinner div:nth-child(2) {
-  background-color: var(--accent-color-light);
+  background-color: var(--primary-color-light);
   animation-delay: 0.2s;
 }
 
