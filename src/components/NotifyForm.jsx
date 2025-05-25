@@ -18,11 +18,15 @@ export default function NotifyForm() {
     countryCode: "+234",
     phone: "",
   });
+
   const [alert, setAlert] = useState(null);
 
   const fullPhone = `${formData.countryCode}${formData.phone}`;
-  const selectedCountry = countries.find(c => c.code === formData.countryCode);
-  const isPhoneValid = formData.phone.replace(/\s/g, "").length === selectedCountry?.length;
+  const selectedCountry = countries.find(
+    (c) => c.code === formData.countryCode
+  );
+  const isPhoneValid =
+    formData.phone.replace(/\s/g, "").length === selectedCountry?.length;
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -37,7 +41,9 @@ export default function NotifyForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const submittedNumbers = JSON.parse(localStorage.getItem("submittedNumbers") || "[]");
+    const submittedNumbers = JSON.parse(
+      localStorage.getItem("submittedNumbers") || "[]"
+    );
     if (submittedNumbers.includes(fullPhone)) {
       showAlert("error", "This phone number has already been registered.");
       return;
@@ -52,7 +58,10 @@ export default function NotifyForm() {
       const response = await fetch("https://formspree.io/f/mzzrlgkk", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name: formData.name, phone: fullPhone }),
+        body: JSON.stringify({
+          name: formData.name,
+          phone: fullPhone,
+        }),
       });
 
       if (response.ok) {
@@ -65,18 +74,21 @@ export default function NotifyForm() {
       } else {
         throw new Error("Form submission failed.");
       }
-    } catch {
+    } catch (err) {
       showAlert("error", "Oops! Something went wrong. Please try again.");
     }
   };
 
   const handleJoinGroup = () => {
-    window.location.href = "https://chat.whatsapp.com/FiWdZH9eBMfHjdY4YUqQr7";
+    window.location.href =
+      "https://chat.whatsapp.com/FiWdZH9eBMfHjdY4YUqQr7";
   };
 
   return (
     <form onSubmit={handleSubmit} className="notify-form fade-in-up">
-      {alert && <div className={`custom-alert ${alert.type}`}>{alert.message}</div>}
+      {alert && (
+        <div className={`custom-alert ${alert.type}`}>{alert.message}</div>
+      )}
 
       <div className="form-group">
         <input

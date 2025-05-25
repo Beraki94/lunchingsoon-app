@@ -63,7 +63,7 @@
 
 /* === HERO SECTION === */
 .hero {
-  background-image: url('/joeandjoemandilasgate.jpg');
+  background-image: url('/joemandilasgate.jpg');
   background-size: cover;
   background-position: center;
   padding: 6rem 1rem;
@@ -225,5 +225,45 @@
 
   .hero__subheading {
     font-size: var(--font-size-sm);
+  }
+}
+
+
+.loader-overlay {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(135deg, var(--neutral-light), var(--neutral-white));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.spinner {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.spinner div {
+  width: 1rem;
+  height: 1rem;
+  background-color: var(--accent-color);
+  border-radius: 50%;
+  animation: bounce 0.6s infinite alternate;
+}
+
+.spinner div:nth-child(2) {
+  background-color: var(--accent-color-light);
+  animation-delay: 0.2s;
+}
+
+.spinner div:nth-child(3) {
+  background-color: var(--primary-color);
+  animation-delay: 0.4s;
+}
+
+@keyframes bounce {
+  to {
+    transform: translateY(-1rem);
   }
 }
