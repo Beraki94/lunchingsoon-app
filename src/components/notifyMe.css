@@ -61,6 +61,11 @@
   margin-bottom: var(--spacing-1);
 }
 
+.header p{
+  color: var(--neutral-medium);
+  font-size: var(--font-size-md);
+}
+
 /* === HERO SECTION === */
 .hero {
   background-size: cover;
